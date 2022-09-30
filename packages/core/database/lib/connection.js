@@ -3,6 +3,7 @@
 'use strict';
 
 const knex = require('knex');
+// const { DataApiClient } = require('rqlite-js');
 
 const SqliteClient = require('knex/lib/dialects/sqlite3/index');
 
@@ -51,6 +52,9 @@ const createConnection = (config) => {
 
     knexConfig.client = clientMap[sqlitePackageName];
   }
+
+  // rqlite
+  /* const dataApiClient = new DataApiClient('http://localhost:4001'); */
 
   const knexInstance = knex(knexConfig);
 
